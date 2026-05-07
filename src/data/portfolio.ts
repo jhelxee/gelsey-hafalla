@@ -119,28 +119,24 @@ export const skills = [
 export const projects = [
   {
     title: 'Centralized System',
-    image: '/assets/projects/centralized-system.jpg',
     tags: ['Web App', 'Automation', 'Full Stack'],
     description:
       'Built a centralized web system that automatically captures employee performance on every login, automates checklist collection, and integrates directly with existing systems — eliminating dependency on multiple tools and giving teams a single platform to manage and track everything in real time.',
   },
   {
     title: 'Centralized Master',
-    image: '/assets/projects/centralized-master.jpg',
     tags: ['Management', 'Real-time', 'Full Stack'],
     description:
       'Built an integrated management system that automates masterlist maintenance and provides real-time tracking of employee violations, transfers, PRF requisitions, and computer asset information — eliminating manual updates and improving data accuracy across departments.',
   },
   {
     title: 'Bundenban Shiyousho',
-    image: '/assets/projects/bundenban-shio.jpg',
     tags: ['Automation', 'Data Processing', 'Backend'],
     description:
       'Built a system that automatically aggregates all required data sources to enable accurate and automated generation of Bundenban serial indicators — eliminating manual lookups and reducing processing time.',
   },
   {
     title: 'Data Gathering',
-    image: '/assets/projects/data-gathering.jpg',
     tags: ['Data Export', 'CSV', 'Multi-DB'],
     description:
       'Built a system that extracts and consolidates required data from multiple databases into a structured CSV export — streamlining data collection, reducing manual effort, and enabling accurate cross-system reporting.',

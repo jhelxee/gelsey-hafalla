@@ -29,12 +29,7 @@ GelseyIsayas-Portfolio/
 ├── public/
 │   └── assets/
 │       ├── profile.png              ← Profile photo
-│       ├── resume.pdf               ← Gelsey Hafalla.pdf (downloadable)
-│       └── projects/
-│           ├── centralized-system.jpg
-│           ├── centralized-master.jpg
-│           ├── bundenban-shio.jpg
-│           └── data-gathering.jpg
+│       └── resume.pdf               ← Gelsey Hafalla.pdf (downloadable)
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.tsx               ← Sticky nav, mobile hamburger
@@ -69,7 +64,7 @@ To update any text, social links, skills, projects — edit that file only. Comp
 - `aboutMe` — bio paragraph(s)
 - `experiences` — array of companies → roles → bullet points
 - `skills` — 4 categories: Programming, Virtual Assistant, Administration, Additional
-- `projects` — 4 projects with image paths, tags, descriptions
+- `projects` — 4 projects with title, tags, descriptions (no screenshots — confidential, owned by private company)
 - `education` — school + degree
 - `trainings` — seminars/training institutions
 
@@ -128,10 +123,7 @@ npm run preview   # Preview production build
 |----------|-----------|
 | `Gelsey Picture Profile.png` | `public/assets/profile.png` |
 | `Gelsey Hafalla.pdf` | `public/assets/resume.pdf` |
-| `Project/centralized system.JPG` | `public/assets/projects/centralized-system.jpg` |
-| `Project/centralized master.JPG` | `public/assets/projects/centralized-master.jpg` |
-| `Project/bundenban shio.JPG` | `public/assets/projects/bundenban-shio.jpg` |
-| `Project/data gathering.JPG` | `public/assets/projects/data-gathering.jpg` |
+| Project screenshots | Removed — projects are confidential (private company IP); shown as placeholder cards |
 
 ---
 
