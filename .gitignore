@@ -25,3 +25,7 @@ dist-ssr
 
 # Claude Code local settings
 .claude/
+
+# Playwright MCP session artifacts
+.playwright-mcp/
+projects-page.png
