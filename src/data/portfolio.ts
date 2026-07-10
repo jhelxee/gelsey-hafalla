@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: 'Gelsey T. Hafalla',
-  title: 'Full Stack Web Developer | Team Leader | Chat Moderator | Technical Support | Customer Support',
+  title: 'Full Stack Web Developer | Team Leader | Chat Moderator | Technical Support | Customer Support | Virtual Assistant',
   email: 'jhelxee028@gmail.com',
   phone: '+639192253040',
   address: '0101 Purok 7 Bacao II, General Trias City, Cavite',
@@ -11,9 +11,9 @@ export const personalInfo = {
   resume: '/assets/resume.pdf',
 }
 
-export const aboutMe = `Full Stack Web Developer with proven experience in web application development, team leadership, technical support, and customer service. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
+export const aboutMe = `Full Stack Web Developer with proven experience in web application development, team leadership, technical support, customer service, and virtual assistant. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
 
-With a background in chat moderation and technical support, I excel at maintaining positive user experiences, resolving complex issues, and delivering clear, client-focused communication. I am driven to leverage my diverse skill set in innovative projects while continuously growing in the fast-paced tech industry.`
+With a background in customer service, chat moderation and technical support, I excel at maintaining positive user experiences, resolving complex issues, and delivering clear, client-focused communication. I am driven to leverage my diverse skill set in innovative projects while continuously growing in the fast-paced tech industry.`
 
 export const experiences = [
   {

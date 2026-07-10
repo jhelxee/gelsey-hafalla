@@ -8,8 +8,8 @@ const contactItems = [
   { icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
   { icon: MapPin, label: 'Location', value: personalInfo.address, href: '#' },
   { icon: Globe, label: 'LinkedIn', value: 'gelsey-hafalla', href: personalInfo.linkedin },
-  { icon: Globe, label: 'GitHub', value: 'gelseyhafalla', href: personalInfo.github },
-  { icon: Globe, label: 'Portfolio', value: 'gelsey-hafalla-profilev2.vercel.app', href: personalInfo.portfolio },
+  { icon: Globe, label: 'GitHub', value: 'jhelxee', href: personalInfo.github },
+  { icon: Globe, label: 'Portfolio', value: 'gelsey-hafalla.vercel.app', href: personalInfo.portfolio },
 ]
 
 export default function Contact() {

@@ -122,7 +122,7 @@ export default function Hero() {
               </div>
               <div className="w-px h-8 bg-white/10" />
               <div>
-                <div className="text-3xl font-black text-white">5+</div>
+                <div className="text-3xl font-black text-white">25+</div>
                 <div className="text-xs text-gray-500 tracking-widest uppercase mt-1">Projects</div>
               </div>
               <div className="w-px h-8 bg-white/10" />
