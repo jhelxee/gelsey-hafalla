@@ -201,7 +201,7 @@ export const projects: Project[] = [
     link: 'https://beshybakes.vercel.app/',
   },
   {
-    title: 'BeshyBakes Twist and Treats',
+    title: 'Twist and Treats by BeshyBakes',
     category: 'Public',
     tags: ['React', 'Tailwind CSS', 'Vite'],
     description:
