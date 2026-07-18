@@ -206,8 +206,8 @@ export const projects: Project[] = [
     tags: ['React', 'Tailwind CSS', 'Vite'],
     description:
       'Developed a responsive bakery/cafe website with online ordering, crafted to showcase baked products, balloon designing, and catering services while delivering a smooth and user-friendly customer experience.',
-    image: '/assets/projects/beshybakes.png',
-    link: 'https://beshy-bakes.vercel.app/',
+    image: '/assets/projects/twistAndTreats.png',
+    link: 'https://twist-and-treats.vercel.app/',
   },
   {
     title: 'Centralized System',
