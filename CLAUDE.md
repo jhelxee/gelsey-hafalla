@@ -44,11 +44,12 @@ GelseyIsayas-Portfolio/
 │   │   ├── Intro.tsx                ← Splash screen (AnimatePresence exit)
 │   │   ├── Hero.tsx                 ← Vortex bg + 3D card profile + stagger text
 │   │   ├── About.tsx                ← Profile photo + bio + contact icons
-│   │   ├── Experience.tsx           ← Timeline (HRD Singapore 2007–present)
-│   │   ├── Skills.tsx               ← 4 category cards + infinite marquee rows
-│   │   ├── Projects.tsx             ← 2-column project card grid
+│   │   ├── Services.tsx             ← "What I Bring to Your Team" — 4 value-prop cards
+│   │   ├── Experience.tsx           ← Timeline (HRD Singapore 2007–present), per-role icons
+│   │   ├── Skills.tsx               ← 5 category cards + infinite marquee rows
+│   │   ├── Projects.tsx             ← Filterable grid (category chips + show more)
 │   │   ├── Education.tsx            ← Education + seminars/training
-│   │   ├── Contact.tsx              ← Contact cards + footer
+│   │   ├── Contact.tsx              ← Two-column: photo/CTA + contact cards + footer
 │   │   ├── FadeIn.tsx               ← Scroll-triggered animation wrapper (variant: default/zoom/clip)
 │   │   └── RevealText.tsx           ← Word-by-word heading reveal component
 │   ├── components/ui/
@@ -58,7 +59,8 @@ GelseyIsayas-Portfolio/
 │   │   ├── container-scroll-animation.tsx ← Aceternity Container Scroll (manual impl)
 │   │   └── vortex.tsx               ← Aceternity Vortex (manual impl)
 │   ├── lib/
-│   │   └── utils.ts                 ← cn() utility (clsx + tailwind-merge)
+│   │   ├── utils.ts                 ← cn() utility (clsx + tailwind-merge)
+│   │   └── roleIcons.tsx            ← roleIcon(title) — maps a role title to a lucide icon, shared by About + Experience
 │   ├── data/
 │   │   └── portfolio.ts             ← ALL content data (single source of truth)
 │   ├── App.tsx                      ← Assembles all sections, AnimatePresence for Intro
@@ -80,10 +82,14 @@ To update any text, social links, skills, projects — edit that file only.
 
 ### Key exports:
 - `personalInfo` — name, email, phone, address, LinkedIn, GitHub, photo, resume paths
+- `valueProposition` — one-line client-facing hook shown in Hero
+- `stats` — `{ years, projects, teamLed, systems }`, single source of truth for numbers shown in Hero
 - `aboutMe` — bio paragraph(s)
 - `experiences` — array of companies → roles → bullet points
-- `skills` — 4 categories: Programming, Virtual Assistant, Administration, Additional
-- `projects` — 4 projects with image paths, tags, descriptions
+- `services` — 4 "what I bring" cards (icon name + title + description) rendered by `Services.tsx`
+- `skills` — 5 categories: Programming, Virtual Assistant, Administration, Additional Skills, AI-Assisted Development
+- `projects` — 25 projects (24 NDA internal systems + 1 public), each with a `category` (`ProjectCategory`) used by the Projects filter grid
+- `projectCategories` — the 4 category values used as filter chips
 - `education` — school + degree
 - `trainings` — seminars/training institutions
 
@@ -119,14 +125,15 @@ Sections alternate between `bg-[#0d0d0d]` and `bg-[#111]`.
 
 ## Portfolio Sections
 1. **Intro** — full-screen splash, GH logo scales in, name + tagline, progress bar, slides up on exit
-2. **Navbar** — dark bg, GH logo pill left, nav links right, Download CV teal button
-3. **Hero** — Vortex animated particle bg + left text (stagger) + right 3D Card profile photo
-4. **About** — profile photo (hover scale) + bio + 6 contact icon links
-5. **Experience** — HRD Singapore timeline (Team Leader → Full Stack Dev → Tech Support → Customer Service → Chat Moderator)
-6. **Skills** — 4 icon cards (zoom FadeIn) + two-row infinite marquee of all skill tags
-7. **Projects** — 2-col grid with zoom FadeIn + hover lift
-8. **Education** — Montessori Professional College + 2 seminars/trainings
-9. **Contact + Footer** — 6 contact cards + copyright
+2. **Navbar** — dark bg, GH logo pill left, nav links right (incl. Services), Download CV teal button
+3. **Hero** — Vortex animated particle bg + left text (stagger, value prop line) + right circular photo cutout with gradient ring + floating social icon bubbles (Mail/GitHub/LinkedIn)
+4. **About** — profile photo (hover scale) + bio + 6 contact icon links + "At a Glance" condensed two-column snapshot (Academic Qualification / Career Highlights with per-role icons)
+5. **Services** — "What I Bring to Your Team" — 4 value-prop cards (Full-Stack Dev, Team Leadership, Technical/Customer Support, AI-Assisted Development)
+6. **Experience** — HRD Singapore timeline (Team Leader → Full Stack Dev → Tech Support → Customer Service → Chat Moderator), each role has an icon via `roleIcon()`
+7. **Skills** — 5 icon cards (zoom FadeIn, incl. AI-Assisted Development) + two-row infinite marquee of all skill tags
+8. **Projects** — filterable grid (All / Centralized Systems / Automation & Monitoring / Data & Reporting / Public) with "Show more" pagination, zoom FadeIn + hover lift
+9. **Education** — Montessori Professional College + 2 seminars/trainings
+10. **Contact + Footer** — two-column (photo + availability badge + CTA/CV download | 6 contact cards) + copyright
 
 ---
 
@@ -134,7 +141,7 @@ Sections alternate between `bg-[#0d0d0d]` and `bg-[#111]`.
 | Component | File | Used In |
 |-----------|------|---------|
 | Background Boxes | `src/components/ui/background-boxes.tsx` | (available, not currently active in Hero) |
-| 3D Card | `src/components/ui/3d-card.tsx` | Hero profile photo |
+| 3D Card | `src/components/ui/3d-card.tsx` | (available, not currently active — Hero now uses a circular photo cutout instead) |
 | Hero Parallax | `src/components/ui/hero-parallax.tsx` | (available, not currently active) |
 | Container Scroll Animation | `src/components/ui/container-scroll-animation.tsx` | (available, not currently active) |
 | Vortex | `src/components/ui/vortex.tsx` | Hero background |
@@ -217,3 +224,11 @@ npm run preview       # Preview production build
 | 2026-05-06 | Full dark theme applied site-wide (bg-[#0d0d0d] / #111) |
 | 2026-05-06 | vite.config.ts: server.host = true for LAN access |
 | 2026-05-06 | Favicon changed from GitHub Octocat SVG to GH lettermark |
+| 2026-07-18 | Structural redesign per client's `5.png` reference — kept dark/teal brand and existing animation system, borrowed layout ideas only (no contact form, per user's choice) |
+| 2026-07-18 | Hero: replaced 3D tilt card with a circular photo cutout + gradient ring + floating social icon bubbles; added `valueProposition` line and data-driven `stats` |
+| 2026-07-18 | Added `Services.tsx` ("What I Bring to Your Team") between About and Experience — explicit value-prop section for clients/recruiters |
+| 2026-07-18 | Added "AI-Assisted Development" skills category (Claude, Perplexity, Prompt Engineering) — grounded in resume's existing Tools line |
+| 2026-07-18 | Projects: replaced 3-card autoplay carousel with a filterable grid (`ProjectCategory` + "Show more" pagination) to better showcase 24+ systems |
+| 2026-07-18 | About: added condensed "At a Glance" two-column snapshot (Academic Qualification / Career Highlights) below the bio |
+| 2026-07-18 | Extracted `roleIcon()` to `src/lib/roleIcons.tsx`, shared by About's Career Highlights and Experience's timeline |
+| 2026-07-18 | Contact: restyled into two columns (photo + availability badge + CTA | contact link cards) — no working form by design |

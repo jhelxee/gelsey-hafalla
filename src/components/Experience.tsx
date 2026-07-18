@@ -1,5 +1,6 @@
 import { Briefcase } from 'lucide-react'
 import { experiences } from '../data/portfolio'
+import { roleIcon } from '../lib/roleIcons'
 import FadeIn from './FadeIn'
 import RevealText from './RevealText'
 
@@ -27,12 +28,17 @@ export default function Experience() {
             </FadeIn>
 
             <div className="ml-5 border-l-2 border-[#00b4a0]/20 pl-8 space-y-10">
-              {exp.roles.map((role, i) => (
+              {exp.roles.map((role, i) => {
+                const RoleIcon = roleIcon(role.title)
+                return (
                 <FadeIn key={role.title} delay={i * 0.08}>
                   <div className="relative">
                     <div className="absolute -left-[2.65rem] top-1 w-3 h-3 rounded-full bg-[#00b4a0] border-2 border-[#0d0d0d]" />
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
-                      <h4 className="text-white font-semibold">{role.title}</h4>
+                      <h4 className="text-white font-semibold flex items-center gap-2">
+                        <RoleIcon size={16} className="text-[#00b4a0]" />
+                        {role.title}
+                      </h4>
                       <span className="text-xs text-[#00b4a0] bg-[#00b4a0]/10 border border-[#00b4a0]/20 px-3 py-1 rounded-full font-medium w-fit">
                         {role.period}
                       </span>
@@ -47,7 +53,8 @@ export default function Experience() {
                     </ul>
                   </div>
                 </FadeIn>
-              ))}
+                )
+              })}
             </div>
           </div>
         ))}

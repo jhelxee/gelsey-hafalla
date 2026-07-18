@@ -1,10 +1,10 @@
-import { Code, Monitor, Briefcase, Star } from 'lucide-react'
+import { Code, Monitor, Briefcase, Star, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { skills } from '../data/portfolio'
 import FadeIn from './FadeIn'
 import RevealText from './RevealText'
 
-const iconMap: Record<string, React.ElementType> = { Code, Monitor, Briefcase, Star }
+const iconMap: Record<string, React.ElementType> = { Code, Monitor, Briefcase, Star, Sparkles }
 
 const allSkills = skills.flatMap((g) => g.items)
 const half = Math.ceil(allSkills.length / 2)
