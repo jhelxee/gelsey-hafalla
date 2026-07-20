@@ -18,7 +18,7 @@ Personal portfolio website for **Gelsey T. Hafalla** — Full Stack Web Develope
 | Framework | React 19 + TypeScript (Vite) |
 | Styling | Tailwind CSS v4 (`@tailwindcss/vite`) |
 | Animation | Framer Motion v12 |
-| Icons | Lucide React |
+| Icons | Lucide React + react-icons (`react-icons/si` for brand/tech logos) |
 | Fonts | Inter + Playfair Display (Google Fonts) |
 | Utilities | clsx + tailwind-merge → `cn()` |
 | Build | Vite 6 |
@@ -60,7 +60,8 @@ GelseyIsayas-Portfolio/
 │   │   └── vortex.tsx               ← Aceternity Vortex (manual impl)
 │   ├── lib/
 │   │   ├── utils.ts                 ← cn() utility (clsx + tailwind-merge)
-│   │   └── roleIcons.tsx            ← roleIcon(title) — maps a role title to a lucide icon, shared by About + Experience
+│   │   ├── roleIcons.tsx            ← roleIcon(title) — maps a role title to a lucide icon, shared by About + Experience
+│   │   └── techIcons.tsx            ← techIcon(name) — maps a tech/language name to a react-icons brand logo, used by Skills (Programming) + Projects tags
 │   ├── data/
 │   │   └── portfolio.ts             ← ALL content data (single source of truth)
 │   ├── App.tsx                      ← Assembles all sections, AnimatePresence for Intro
@@ -87,9 +88,9 @@ To update any text, social links, skills, projects — edit that file only.
 - `aboutMe` — bio paragraph(s)
 - `experiences` — array of companies → roles → bullet points
 - `services` — 4 "what I bring" cards (icon name + title + description) rendered by `Services.tsx`
-- `skills` — 5 categories: Programming, Virtual Assistant, Administration, Additional Skills, AI-Assisted Development
-- `projects` — 25 projects (24 NDA internal systems + 1 public), each with a `category` (`ProjectCategory`) used by the Projects filter grid
-- `projectCategories` — the 4 category values used as filter chips
+- `skills` — 4 categories: Programming (subgrouped into Front End / Back End / Database / Dev Tools), Virtual Assistant (subgrouped into Marketing / Design / Administrative Support), Administration, AI-Assisted Development. Programming and Virtual Assistant use `subgroups: SkillSubgroup[]` instead of a flat `items` list — rendered as columns inside the same card by `Skills.tsx`
+- `projects` — 27 projects (25 NDA internal systems + 2 public), each with a `category` (`ProjectCategory`) used by the Projects filter grid, and `tags` (real tech stack per project, rendered with `techIcon()` logos)
+- `projectCategories` — the 5 category values used as filter chips: Web Applications, Admin Dashboards, Email Automation, API Integrations, Monitoring Tools
 - `education` — school + degree
 - `trainings` — seminars/training institutions
 
@@ -129,9 +130,9 @@ Sections alternate between `bg-[#0d0d0d]` and `bg-[#111]`.
 3. **Hero** — Vortex animated particle bg + left text (stagger, value prop line) + right circular photo cutout with gradient ring + floating social icon bubbles (Mail/GitHub/LinkedIn)
 4. **About** — profile photo (hover scale) + bio + 6 contact icon links + "At a Glance" condensed two-column snapshot (Academic Qualification / Career Highlights with per-role icons)
 5. **Services** — "What I Bring to Your Team" — 4 value-prop cards (Full-Stack Dev, Team Leadership, Technical/Customer Support, AI-Assisted Development)
-6. **Experience** — HRD Singapore timeline (Team Leader → Full Stack Dev → Tech Support → Customer Service → Chat Moderator), each role has an icon via `roleIcon()`
-7. **Skills** — 5 icon cards (zoom FadeIn, incl. AI-Assisted Development) + two-row infinite marquee of all skill tags
-8. **Projects** — filterable grid (All / Centralized Systems / Automation & Monitoring / Data & Reporting / Public) with "Show more" pagination, zoom FadeIn + hover lift
+6. **Experience** — HRD Singapore timeline (Team Leader → Full Stack Dev → Tech Support → Customer Service), each role has an icon via `roleIcon()`
+7. **Skills** — 4 icon cards (zoom FadeIn): Programming and Virtual Assistant span the full row and show subcategory columns (with brand-logo icons via `techIcon()` on Programming items), Administration and AI-Assisted Development stay flat single-column cards — plus a two-row infinite marquee of all skill tags
+8. **Projects** — filterable grid (All / Web Applications / Admin Dashboards / Email Automation / API Integrations / Monitoring Tools) with "Show more" pagination, real tech-stack tags rendered with brand-logo icons, zoom FadeIn + hover lift
 9. **Education** — Montessori Professional College + 2 seminars/trainings
 10. **Contact + Footer** — two-column (photo + availability badge + CTA/CV download | 6 contact cards) + copyright
 
@@ -232,3 +233,8 @@ npm run preview       # Preview production build
 | 2026-07-18 | About: added condensed "At a Glance" two-column snapshot (Academic Qualification / Career Highlights) below the bio |
 | 2026-07-18 | Extracted `roleIcon()` to `src/lib/roleIcons.tsx`, shared by About's Career Highlights and Experience's timeline |
 | 2026-07-18 | Contact: restyled into two columns (photo + availability badge + CTA | contact link cards) — no working form by design |
+| 2026-07-20 | Synced content with updated `Gelsey Hafalla.pdf`: removed the Chat Moderator role/title everywhere, updated `aboutMe` bio wording, set `stats.years` to 18 |
+| 2026-07-20 | Removed the "Additional Skills" category (Katakana/Hiragana/Kanji reading, Autocad, Architrend, DraftSight, BMOS, Walk-in Home) — no longer on the resume |
+| 2026-07-20 | Skills data restructured: `Programming` and `Virtual Assistant` now use `subgroups` (Front End/Back End/Database/Dev Tools; Marketing/Design/Administrative Support) rendered as columns inside one card instead of separate cards, matching the resume's layout |
+| 2026-07-20 | Added `react-icons` dependency; new `src/lib/techIcons.tsx` maps tech/language names to `react-icons/si` brand logos, used on Programming skill items and on every Projects tech tag |
+| 2026-07-20 | Projects: replaced the 4 filter categories (Centralized Systems / Automation & Monitoring / Data & Reporting / Public) with 5 "what I build" categories (Web Applications / Admin Dashboards / Email Automation / API Integrations / Monitoring Tools) and re-tagged all 27 projects; project `tags` switched from descriptive keywords to real tech-stack names so icons render meaningfully |

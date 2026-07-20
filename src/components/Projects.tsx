@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, Lock } from 'lucide-react'
+import { ExternalLink, Lock, Code } from 'lucide-react'
 import { projects, projectCategories } from '../data/portfolio'
+import { techIcon } from '../lib/techIcons'
 import FadeIn from './FadeIn'
 import RevealText from './RevealText'
 
@@ -89,11 +90,15 @@ export default function Projects() {
                 )}
                 <p className="text-[#00b4a0]/70 text-[11px] font-semibold uppercase tracking-widest">{project.category}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="text-xs text-[#00b4a0] bg-[#00b4a0]/10 border border-[#00b4a0]/20 px-2 py-1 rounded-full font-medium">
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag) => {
+                    const TagIcon = techIcon(tag) ?? Code
+                    return (
+                      <span key={tag} className="inline-flex items-center gap-1.5 text-xs text-[#00b4a0] bg-[#00b4a0]/10 border border-[#00b4a0]/20 px-2 py-1 rounded-full font-medium">
+                        <TagIcon size={12} className="shrink-0" />
+                        {tag}
+                      </span>
+                    )
+                  })}
                 </div>
                 <h3 className="text-white font-bold text-lg leading-snug">{project.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed flex-1">{project.description}</p>

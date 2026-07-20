@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: 'Gelsey T. Hafalla',
-  title: 'Full Stack Web Developer | Team Leader | Technical Support | Customer Support | Virtual Assistant | Chat Moderator',
+  title: 'Full Stack Web Developer | Team Leader | Technical Support | Customer Support | Virtual Assistant',
   email: 'jhelxee028@gmail.com',
   phone: '+639192253040',
   address: '0101 Purok 7 Bacao II, General Trias City, Cavite',
@@ -12,18 +12,18 @@ export const personalInfo = {
 }
 
 export const valueProposition =
-  'I turn operational chaos into automated systems — 24+ internal platforms shipped, teams of up to 12 led, and on-time delivery every cycle.'
+  'I turn operational chaos into automated systems — 25+ internal platforms shipped, teams of up to 12 led, and on-time delivery every cycle.'
 
 export const stats = {
-  years: 19,
-  projects: 25,
+  years: 18,
+  projects: 27,
   teamLed: 12,
-  systems: 24,
+  systems: 25,
 }
 
-export const aboutMe = `Full Stack Web Developer with proven experience in web application development, team leadership, technical support, and customer service. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
+export const aboutMe = `Full Stack Web Developer with 18+ years of experience spanning web application development, team leadership, technical support, and customer service. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
 
-With a background in chat moderation and technical support, I excel at maintaining positive user experiences, resolving complex issues, and delivering clear, client-focused communication. I am driven to leverage my diverse skill set in innovative projects while continuously growing in the fast-paced tech industry.`
+With a background in technical support and customer service, I bring clear, client-focused communication and strong problem-solving skills to every project, including comfort working with modern AI-assisted development tools in my daily workflow.`
 
 export const experiences = [
   {
@@ -73,15 +73,6 @@ export const experiences = [
           'Monitor confirmation status, conduct follow-ups and provide continuous feedback to ensure timely resolution.',
         ],
       },
-      {
-        title: 'Chat Moderator',
-        period: 'January 2025 – October 2025',
-        bullets: [
-          'Actively observe chat conversations to ensure compliance with community standards and guidelines.',
-          'Implement and uphold community rules and policies to maintain a respectful and engaging environment.',
-          'Foster a positive atmosphere by engaging with users, answering questions, and encouraging constructive discussions.',
-        ],
-      },
     ],
   },
 ]
@@ -109,7 +100,7 @@ export const services: Service[] = [
     icon: 'Headset',
     title: 'Technical & Customer Support',
     description:
-      '18+ years across technical support, customer service, and chat moderation — resolving issues clearly and keeping users and stakeholders confident.',
+      '18+ years across technical support and customer service — resolving issues clearly and keeping users and stakeholders confident.',
   },
   {
     icon: 'Sparkles',
@@ -119,28 +110,53 @@ export const services: Service[] = [
   },
 ]
 
-export const skills = [
+export type SkillSubgroup = { label: string; items: string[] }
+export type SkillGroup = {
+  category: string
+  icon: string
+  items?: string[]
+  subgroups?: SkillSubgroup[]
+}
+
+export const skills: SkillGroup[] = [
   {
     category: 'Programming',
     icon: 'Code',
-    items: [
-      'CSS', 'HTML', 'JavaScript', 'jQuery',
-      'Vue.js', 'Vuetify',
-      'Node.js', 'Express.js', 'Socket.io', 'PHP', 'Laravel',
-      'MySQL', 'MSSQL', 'CouchDB',
-      'Git', 'GitHub', 'GitLab',
-      'Nulab (Backlog)', 'Visual Studio Code', 'Notepad++', 'REST API',
+    subgroups: [
+      {
+        label: 'Front End',
+        items: ['JavaScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap', 'Vue.js', 'Vuetify', 'React'],
+      },
+      {
+        label: 'Back End',
+        items: ['Node.js', 'Express.js', 'PHP', 'Socket.io', 'Python'],
+      },
+      {
+        label: 'Database',
+        items: ['MySQL', 'MSSQL', 'NoSQL'],
+      },
+      {
+        label: 'Dev Tools',
+        items: ['GitHub', 'GitLab', 'NPM', 'Yarn', 'REST API', 'Nulab (Backlog)'],
+      },
     ],
   },
   {
     category: 'Virtual Assistant',
     icon: 'Monitor',
-    items: [
-      'Virtual Assistance', 'Executive Assistant',
-      'Basic Graphic Design', 'Graphic Design & Branding',
-      'Video Editing (Capcut & Canva)',
-      'Lead Generation', 'Email Marketing',
-      'Facebook Ads Marketing', 'Social Media Management',
+    subgroups: [
+      {
+        label: 'Marketing',
+        items: ['Lead Generation', 'Email Marketing', 'Facebook Ads Marketing', 'Social Media Management'],
+      },
+      {
+        label: 'Design',
+        items: ['Basic Graphic Design & Branding', 'Video Editing (CapCut & Canva)'],
+      },
+      {
+        label: 'Administrative Support',
+        items: ['Virtual Assistance', 'Executive Assistant'],
+      },
     ],
   },
   {
@@ -148,17 +164,7 @@ export const skills = [
     icon: 'Briefcase',
     items: [
       'MS Word', 'MS Excel', 'MS PowerPoint',
-      'MS Teams', 'Microsoft 365', 'Photoshop', 'Vectorworks',
-    ],
-  },
-  {
-    category: 'Additional Skills',
-    icon: 'Star',
-    items: [
-      'Katakana & Hiragana reading',
-      'Basic Kanji reading',
-      'Autocad', 'Architrend', 'Architrend Zero',
-      'DraftSight', 'BMOS', 'Walk-in Home',
+      'MS Teams', 'Microsoft 365', 'Photoshop', 'Vectorworks', 'Canva',
     ],
   },
   {
@@ -172,13 +178,19 @@ export const skills = [
   },
 ]
 
-export type ProjectCategory = 'Centralized Systems' | 'Automation & Monitoring' | 'Data & Reporting' | 'Public'
+export type ProjectCategory =
+  | 'Web Applications'
+  | 'Admin Dashboards'
+  | 'Email Automation'
+  | 'API Integrations'
+  | 'Monitoring Tools'
 
 export const projectCategories: ProjectCategory[] = [
-  'Centralized Systems',
-  'Automation & Monitoring',
-  'Data & Reporting',
-  'Public',
+  'Web Applications',
+  'Admin Dashboards',
+  'Email Automation',
+  'API Integrations',
+  'Monitoring Tools',
 ]
 
 type Project = {
@@ -193,7 +205,7 @@ type Project = {
 export const projects: Project[] = [
   {
     title: 'BeshyBakes',
-    category: 'Public',
+    category: 'Web Applications',
     tags: ['React', 'Tailwind CSS', 'Vite'],
     description:
       'Created a customer-focused bakery website that highlights specialty baked goods and simplifies online ordering for cookies, cupcakes, and loaf cakes.',
@@ -202,7 +214,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Twist and Treats by BeshyBakes',
-    category: 'Public',
+    category: 'Web Applications',
     tags: ['React', 'Tailwind CSS', 'Vite'],
     description:
       'Developed a responsive bakery/cafe website with online ordering, crafted to showcase baked products, balloon designing, and catering services while delivering a smooth and user-friendly customer experience.',
@@ -211,176 +223,176 @@ export const projects: Project[] = [
   },
   {
     title: 'Centralized System',
-    category: 'Centralized Systems',
-    tags: ['Web App', 'Automation', 'Full Stack'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'Node.js', 'MySQL'],
     description:
       'Built a centralized web system that automatically captures employee performance on every login, automates checklist collection, and integrates directly with existing systems — eliminating dependency on multiple tools and giving teams a single platform to manage and track everything in real time.',
   },
   {
     title: 'Centralized Master',
-    category: 'Centralized Systems',
-    tags: ['Management', 'Real-time', 'Full Stack'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'Express.js', 'MySQL'],
     description:
       'Built an integrated management system that automates masterlist maintenance and provides real-time tracking of employee violations, transfers, PRF requisitions, and computer asset information — eliminating manual updates and improving data accuracy across departments.',
   },
   {
     title: 'Bundenban Shiyousho',
-    category: 'Data & Reporting',
-    tags: ['Automation', 'Data Processing', 'Backend'],
+    category: 'API Integrations',
+    tags: ['PHP', 'MySQL', 'MSSQL'],
     description:
       'Built a system that automatically aggregates all required data sources to enable accurate and automated generation of Bundenban serial indicators — eliminating manual lookups and reducing processing time.',
   },
   {
     title: 'Data Gathering',
-    category: 'Data & Reporting',
-    tags: ['Data Export', 'CSV', 'Multi-DB'],
+    category: 'API Integrations',
+    tags: ['PHP', 'MySQL', 'MSSQL'],
     description:
       'Built a system that extracts and consolidates required data from multiple databases into a structured CSV export — streamlining data collection, reducing manual effort, and enabling accurate cross-system reporting.',
   },
   {
     title: 'Kansen Form',
-    category: 'Automation & Monitoring',
-    tags: ['Automation', 'Form Builder', 'Multi-DB'],
+    category: 'API Integrations',
+    tags: ['Vue.js', 'Node.js', 'MySQL'],
     description:
       'Engineered an end-to-end proposal automation system that dynamically pulls and validates data from multiple databases to auto-populate kansen proposal forms — delivering fully prepared, error-free submissions to the Japan side and eliminating the manual coordination that previously slowed the entire proposal pipeline.',
   },
   {
     title: 'Rechecking',
-    category: 'Automation & Monitoring',
-    tags: ['Monitoring', 'Data Processing', 'Workflow'],
+    category: 'Monitoring Tools',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a dedicated monitoring and dispatch system for plan production rechecks — tracking all items flagged for review, consolidating the required data, and ensuring it reaches the right teams without delay, reducing production hold-ups caused by missing or late rechecking information.',
   },
   {
     title: 'Floor Holing',
-    category: 'Centralized Systems',
-    tags: ['Centralized', 'Multi-Department', 'Workflow'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'Express.js', 'MySQL'],
     description:
       'Built a cross-departmental centralized confirmation system that unifies floor holing records from all teams into a single, always-current list — replacing scattered, department-specific tracking with one shared platform that keeps every stakeholder aligned in real time.',
   },
   {
     title: 'Computer Information',
-    category: 'Automation & Monitoring',
-    tags: ['Asset Management', 'Automation', 'Email Alerts'],
+    category: 'Email Automation',
+    tags: ['Node.js', 'Express.js', 'MySQL'],
     description:
       'Built a comprehensive IT asset registry that documents each user\'s computer specifications and software licenses — with an automated conflict detection engine that sends immediate email alerts whenever a discrepancy is found between individual records and the master database, keeping IT assets audit-ready at all times.',
   },
   {
     title: 'Initial Bar',
-    category: 'Automation & Monitoring',
-    tags: ['Scheduling', 'Monitoring', 'Planning'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a production scheduling dashboard that provides process-level visibility into plan timelines — displaying the scheduling status of every plan per production stage so teams can instantly identify bottlenecks, reprioritize work, and keep the entire production schedule on track.',
   },
   {
     title: 'Pending Plans',
-    category: 'Centralized Systems',
-    tags: ['Automation', 'Email Alerts', 'Centralized'],
+    category: 'Email Automation',
+    tags: ['Node.js', 'Express.js', 'MySQL'],
     description:
       'Built a multi-team centralized monitoring hub for plans awaiting confirmation, featuring automated email dispatch and scheduled follow-up reminders — ensuring no pending plan falls through the cracks and significantly reducing the manual coordination burden on every team that relies on confirmation-dependent workflows.',
   },
   {
     title: 'Shitaji Unit',
-    category: 'Automation & Monitoring',
-    tags: ['Monitoring', 'Supply Chain', 'Tracking'],
+    category: 'Monitoring Tools',
+    tags: ['PHP', 'MySQL', 'MSSQL'],
     description:
       'Built a supplier plan tracking system that monitors the receipt and real-time status of every plan arriving from external suppliers — giving production teams immediate visibility into incoming plan readiness and enabling proactive response to delays before they impact the production schedule.',
   },
   {
     title: 'Stop Plan',
-    category: 'Automation & Monitoring',
-    tags: ['Automation', 'Quality Control', 'Validation'],
+    category: 'Monitoring Tools',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built an automated plan validation engine that evaluates each plan against a configurable set of item-specific qualification rules — immediately identifying and flagging non-conforming plans before they enter production, preventing quality escapes, reducing rework, and enforcing consistent standards across all plan types.',
   },
   {
     title: 'Kansen Checklist',
-    category: 'Data & Reporting',
-    tags: ['Automation', 'Price Management', 'Multi-DB'],
+    category: 'Monitoring Tools',
+    tags: ['PHP', 'MySQL', 'MSSQL'],
     description:
       'Built a pricing intelligence system that monitors price brackets by type and automatically compiles categorized price lists based on bracket rules — with live database indicators that keep pricing data consistent across all records and eliminate the manual cross-referencing that previously caused pricing discrepancies.',
   },
   {
     title: 'ICAD Feedback',
-    category: 'Data & Reporting',
-    tags: ['Data Collection', 'Feedback System', 'Reporting'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a structured feedback aggregation system that captures, categorizes, and centralizes every issue raised by plan production against ICAD software — transforming scattered informal problem reports into a searchable, trackable log that drives accountability and informs targeted software improvement decisions.',
   },
   {
     title: 'Wiring Design',
-    category: 'Automation & Monitoring',
-    tags: ['Automation', 'Checklist', 'Plan Monitoring'],
+    category: 'Monitoring Tools',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a plan intake and processing system for wiring design that monitors incoming received plans and automatically compiles the full checklist and all required item data upon receipt — removing the manual documentation step entirely and ensuring every plan arrives at production fully prepared and verified.',
   },
   {
     title: 'PS5 Denki',
-    category: 'Automation & Monitoring',
-    tags: ['Automation', 'Checklist', 'Plan Monitoring'],
+    category: 'Monitoring Tools',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a dedicated monitoring system for PS5 Denki plans that automatically generates complete checklists and all required item-specific data the moment a plan is received — standardizing the documentation process, eliminating manual preparation, and ensuring each plan is production-ready from arrival.',
   },
   {
     title: 'PS5 Denki Coverpage',
-    category: 'Data & Reporting',
-    tags: ['Automation', 'PDF Export', 'Multi-DB'],
+    category: 'API Integrations',
+    tags: ['PHP', 'MySQL', 'MSSQL'],
     description:
       'Built a document generation system that pulls structured data from multiple source databases to automatically produce and serve downloadable PDF cover pages — turning a multi-step manual export process into an on-demand, one-click operation with database-accurate output every time.',
   },
   {
     title: 'Electrical 1',
-    category: 'Centralized Systems',
-    tags: ['Centralized', 'Automation', 'Multi-Team'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'Node.js', 'MySQL'],
     description:
       'Built an enterprise-scale centralized platform deployed across 10 teams that automates checklist aggregation and serves as the unified command center for electrical plan monitoring — consolidating what were previously 10 separate workflows into one synchronized, always-current view of plan status across all teams.',
   },
   {
     title: 'Electrical 2',
-    category: 'Centralized Systems',
-    tags: ['Centralized', 'Automation', 'Multi-Team'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'Express.js', 'MySQL'],
     description:
       'Built a high-capacity centralized system serving 12 teams simultaneously, combining automated checklist collection with comprehensive plan monitoring — providing organization-wide visibility into electrical plan progress while eliminating duplicate tracking efforts and ensuring all teams operate from the same live data.',
   },
   {
     title: 'Wire Route Jiku',
-    category: 'Automation & Monitoring',
-    tags: ['Automation', 'Checklist', 'Plan Monitoring'],
+    category: 'Monitoring Tools',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a specialized plan monitoring system for wire route plans that automatically generates detailed checklists and compiles all required item-level data upon receipt — ensuring every wire route plan is fully documented and production-ready without any manual checklist preparation.',
   },
   {
     title: 'PS5 Denki Wall',
-    category: 'Centralized Systems',
-    tags: ['Centralized', 'Automation', 'Multi-Team'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a centralized wall plan monitoring system shared across 4 teams that automates checklist generation and tracks plan status in real time — replacing per-team manual tracking with a single collaborative platform that gives all teams consistent, up-to-date visibility into every wall plan.',
   },
   {
     title: 'PS5 Denki Ceiling',
-    category: 'Centralized Systems',
-    tags: ['Centralized', 'Automation', 'Multi-Team'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a centralized ceiling plan monitoring system shared across 4 teams that automates checklist collection and provides unified plan status tracking — eliminating redundant per-team documentation and ensuring all teams work from a single authoritative source of ceiling plan data.',
   },
   {
     title: 'Sales and Implementation',
-    category: 'Centralized Systems',
-    tags: ['Centralized', 'Automation', 'Multi-Team'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'Express.js', 'MySQL'],
     description:
       'Built a centralized monitoring platform used across 8 teams that automates checklist gathering and tracks the full lifecycle of sales and implementation plans — unifying team visibility, reducing coordination overhead, and ensuring every plan progresses through each stage with complete, automatically collected documentation.',
   },
   {
     title: 'Work Guide',
-    category: 'Data & Reporting',
-    tags: ['Training', 'Documentation', 'Onboarding'],
+    category: 'Admin Dashboards',
+    tags: ['Vue.js', 'PHP', 'MySQL'],
     description:
       'Built a structured digital training reference system that centralizes all manuals, procedures, and tools needed to onboard newly hired staff — giving new team members a single organized resource throughout training and reducing the time and effort required to bring new developers fully up to speed.',
   },
   {
     title: 'Main Database',
-    category: 'Centralized Systems',
-    tags: ['Core System', 'Automation', 'Multi-System'],
+    category: 'API Integrations',
+    tags: ['Node.js', 'MySQL', 'MSSQL'],
     description:
       'Built the master data infrastructure that serves as the operational core for the entire plan production ecosystem — centralizing all information consumed by every connected system, automatically supplying checklist data, pushing live status updates to plan production, triggering email alerts when database records conflict with floor plans, and dispatching automated reminders for urgent and overdue plans. Every system in plan production depends on this database, making it the single most critical component in the production technology stack.',
   },

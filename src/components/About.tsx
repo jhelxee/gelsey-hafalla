@@ -69,7 +69,7 @@ export default function About() {
         {/* At a Glance snapshot */}
         <div className="border-t border-white/10 pt-12">
           <FadeIn><h3 className="text-[#00b4a0] font-semibold text-sm uppercase tracking-widest mb-6">Career Highlights</h3></FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {careerHighlights.map(({ title, period, Icon }, i) => (
               <FadeIn key={title} delay={i * 0.06} variant="zoom">
                 <motion.div
