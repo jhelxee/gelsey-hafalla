@@ -210,7 +210,7 @@ export const projects: Project[] = [
     description:
       'Created a customer-focused bakery website that highlights specialty baked goods and simplifies online ordering for cookies, cupcakes, and loaf cakes.',
     image: '/assets/projects/beshybakes-main.png',
-    link: 'https://beshybakes.vercel.app/',
+    link: 'https://beshybakes.com/',
   },
   {
     title: 'Twist and Treats by BeshyBakes',
