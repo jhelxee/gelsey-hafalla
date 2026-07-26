@@ -12,16 +12,16 @@ export const personalInfo = {
 }
 
 export const valueProposition =
-  'I turn operational chaos into automated systems — 25+ internal platforms shipped, teams of up to 12 led, and on-time delivery every cycle.'
+  'I turn operational chaos into automated systems — internal platforms shipped, teams of up to 12 led, and on-time delivery every cycle.'
 
 export const stats = {
-  years: 18,
-  projects: 27,
+  years: 19,
+  projects: 28,
   teamLed: 12,
   systems: 25,
 }
 
-export const aboutMe = `Full Stack Web Developer with 18+ years of experience spanning web application development, team leadership, technical support, and customer service. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
+export const aboutMe = `Full Stack Web Developer with 19+ years of experience spanning web application development, team leadership, technical support, and customer service. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
 
 With a background in technical support and customer service, I bring clear, client-focused communication and strong problem-solving skills to every project, including comfort working with modern AI-assisted development tools in my daily workflow.`
 
@@ -100,7 +100,7 @@ export const services: Service[] = [
     icon: 'Headset',
     title: 'Technical & Customer Support',
     description:
-      '18+ years across technical support and customer service — resolving issues clearly and keeping users and stakeholders confident.',
+      '19+ years across technical support and customer service — resolving issues clearly and keeping users and stakeholders confident.',
   },
   {
     icon: 'Sparkles',
@@ -125,15 +125,18 @@ export const skills: SkillGroup[] = [
     subgroups: [
       {
         label: 'Front End',
-        items: ['JavaScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap', 'Vue.js', 'Vuetify', 'React'],
+        items: [
+          'JavaScript', 'TypeScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap',
+          'Tailwind CSS', 'Vue.js', 'Vuetify', 'React', 'Next.js', 'Radix UI', 'React Hook Form',
+        ],
       },
       {
         label: 'Back End',
-        items: ['Node.js', 'Express.js', 'PHP', 'Socket.io', 'Python'],
+        items: ['Node.js', 'Express.js', 'PHP', 'Socket.io', 'Python', 'Zod'],
       },
       {
         label: 'Database',
-        items: ['MySQL', 'MSSQL', 'NoSQL'],
+        items: ['MySQL', 'MSSQL', 'NoSQL', 'Supabase'],
       },
       {
         label: 'Dev Tools',
@@ -203,6 +206,15 @@ type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    title: 'QuickStart Clinic',
+    category: 'Web Applications',
+    tags: ['Next.js', 'React', 'Supabase', 'Tailwind CSS'],
+    description:
+      'Built a pediatric clinic platform combining a marketing site, patient booking portal, and role-based staff/admin dashboard — with layered authorization (proxy redirect, data-access-layer role checks, and Postgres Row Level Security) ensuring clients, staff, doctors, and admins each see only what their role permits.',
+    image: '/assets/projects/quickstart-clinic.png',
+    link: 'https://quickstartclinic.vercel.app/',
+  },
   {
     title: 'BeshyBakes',
     category: 'Web Applications',

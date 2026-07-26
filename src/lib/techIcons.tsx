@@ -20,6 +20,12 @@ import {
   SiYarn,
   SiTailwindcss,
   SiVite,
+  SiNextdotjs,
+  SiSupabase,
+  SiTypescript,
+  SiRadixui,
+  SiReacthookform,
+  SiZod,
 } from 'react-icons/si'
 
 const techIconMap: Record<string, IconType> = {
@@ -43,6 +49,12 @@ const techIconMap: Record<string, IconType> = {
   Yarn: SiYarn,
   'Tailwind CSS': SiTailwindcss,
   Vite: SiVite,
+  'Next.js': SiNextdotjs,
+  Supabase: SiSupabase,
+  TypeScript: SiTypescript,
+  'Radix UI': SiRadixui,
+  'React Hook Form': SiReacthookform,
+  Zod: SiZod,
 }
 
 export function techIcon(name: string): IconType | undefined {
