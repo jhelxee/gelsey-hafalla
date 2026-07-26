@@ -120,7 +120,7 @@ Sections alternate between `bg-[#0d0d0d]` and `bg-[#111]`.
 - **Address:** 0101 Purok 7 Bacao II, General Trias City, Cavite
 - **LinkedIn:** linkedin.com/in/gelsey-hafalla
 - **GitHub:** github.com/gelseyhafalla
-- **Live Portfolio:** gelsey-hafalla-profilev2.vercel.app/
+- **Live Portfolio:** gelsey-hafalla.vercel.app/
 
 ---
 
@@ -242,3 +242,4 @@ npm run preview       # Preview production build
 | 2026-07-26 | Skills: added QuickStart Clinic's tech stack to Programming subgroups — TypeScript, Tailwind CSS, Next.js, Radix UI, React Hook Form (Front End), Zod (Back End), Supabase (Database); added matching `techIcon()` entries |
 | 2026-07-26 | Hero: dropped the hardcoded "25+" from `valueProposition` — it clashed visually with the Stats row's `stats.projects` (28+, now including QuickStart Clinic), even though the two numbers measure different things (internal enterprise platforms vs. total portfolio projects) |
 | 2026-07-26 | `stats.years` bumped 18 → 19; updated matching "18+ years" mentions in `aboutMe` and the Technical Support service bullet |
+| 2026-07-26 | Live portfolio domain changed to `gelsey-hafalla.vercel.app`; added `public/sitemap.xml` (single homepage entry) and `public/google4f555bbab7a07f3e.html` (Google Search Console verification) |
