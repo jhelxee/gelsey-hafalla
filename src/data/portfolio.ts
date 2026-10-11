@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: 'Gelsey T. Hafalla',
-  title: 'Full Stack Web Developer | Team Leader | Technical Support | Customer Support | Virtual Assistant',
+  title: 'Full Stack Web Developer | Technical Support | Customer Support | Virtual Assistant',
   email: 'jhelxee028@gmail.com',
   phone: '+639192253040',
   address: '0101 Purok 7 Bacao II, General Trias City, Cavite',
@@ -12,37 +12,26 @@ export const personalInfo = {
 }
 
 export const valueProposition =
-  'I turn operational chaos into automated systems — internal platforms shipped, teams of up to 12 led, and on-time delivery every cycle.'
+  'I turn operational chaos into automated systems — internal platforms shipped and on-time delivery every cycle.'
 
 export const stats = {
-  years: 19,
+  years: 6,
   projects: 28,
-  teamLed: 12,
   systems: 25,
 }
 
-export const aboutMe = `Full Stack Web Developer with 19+ years of experience spanning web application development, team leadership, technical support, and customer service. Skilled in both frontend and backend technologies, I build robust solutions while leading cross-functional teams to deliver projects on time.
+export const aboutMe = `Full Stack Web Developer with 6+ years of experience in web application development, backed by 3 years in technical support and 5 years in customer service. Skilled in both frontend and backend technologies, I build robust solutions and deliver projects on time.
 
 With a background in technical support and customer service, I bring clear, client-focused communication and strong problem-solving skills to every project, including comfort working with modern AI-assisted development tools in my daily workflow.`
 
 export const experiences = [
   {
     company: 'HRD Singapore PTE LTD',
-    period: 'July 2007 – Present',
+    period: 'July 2007 – 2026',
     roles: [
       {
-        title: 'Team Leader',
-        period: '2023 – Current',
-        bullets: [
-          'Lead a team of 12 full-stack developers, delivering projects on schedule and reducing workflow bottlenecks by implementing structured task monitoring.',
-          'Monitor development progress across the 12-member team, ensuring on-time project delivery and rapid resolution of blockers.',
-          "Manage administration-related issues, including addressing programmer's concerns that require immediate action to ensure a smooth developer workflow.",
-          'Serve as Team Leader while also continuing as a full-time web developer.',
-        ],
-      },
-      {
         title: 'Full Stack Web Developer',
-        period: '2015 – 2023',
+        period: '2020 – 2026',
         bullets: [
           'Developed and maintained 25+ enterprise web applications using PHP, Node.js, Vue.js, and Express.js, supporting daily operations across multiple departments.',
           'Handled system maintenance and modification requests.',
@@ -91,16 +80,10 @@ export const services: Service[] = [
       'End-to-end builds with Vue.js, PHP, Node.js, Express.js and MySQL — from database design to a production-ready UI, with 25+ enterprise applications shipped.',
   },
   {
-    icon: 'Users',
-    title: 'Team Leadership & Delivery',
-    description:
-      'Led a 12-person development team using structured task monitoring that keeps projects on schedule and blockers resolved fast.',
-  },
-  {
     icon: 'Headset',
     title: 'Technical & Customer Support',
     description:
-      '19+ years across technical support and customer service — resolving issues clearly and keeping users and stakeholders confident.',
+      '3 years in technical support and 5 years in customer service — resolving issues clearly and keeping users and stakeholders confident.',
   },
   {
     icon: 'Sparkles',

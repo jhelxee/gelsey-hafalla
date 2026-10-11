@@ -5,7 +5,7 @@ Project reference file for Claude Code sessions. Updated as decisions are made.
 ---
 
 ## Project Overview
-Personal portfolio website for **Gelsey T. Hafalla** — Full Stack Web Developer, Team Leader, Chat Moderator, Technical Support & Customer Support.
+Personal portfolio website for **Gelsey T. Hafalla** — Full Stack Web Developer, Technical Support & Customer Support.
 
 **Goal:** Showcase Gelsey's career, skills, and projects to potential employers/clients.  
 **Design reference:** https://dixieraizpacheco.com/ — dark theme, bold typography, split hero layout.
@@ -44,7 +44,7 @@ GelseyIsayas-Portfolio/
 │   │   ├── Intro.tsx                ← Splash screen (AnimatePresence exit)
 │   │   ├── Hero.tsx                 ← Vortex bg + 3D card profile + stagger text
 │   │   ├── About.tsx                ← Profile photo + bio + contact icons
-│   │   ├── Services.tsx             ← "What I Bring to Your Team" — 4 value-prop cards
+│   │   ├── Services.tsx             ← "What I Bring to Your Team" — 3 value-prop cards
 │   │   ├── Experience.tsx           ← Timeline (HRD Singapore 2007–present), per-role icons
 │   │   ├── Skills.tsx               ← 5 category cards + infinite marquee rows
 │   │   ├── Projects.tsx             ← Filterable grid (category chips + show more)
@@ -84,10 +84,10 @@ To update any text, social links, skills, projects — edit that file only.
 ### Key exports:
 - `personalInfo` — name, email, phone, address, LinkedIn, GitHub, photo, resume paths
 - `valueProposition` — one-line client-facing hook shown in Hero
-- `stats` — `{ years, projects, teamLed, systems }`, single source of truth for numbers shown in Hero
+- `stats` — `{ years, projects, systems }`, single source of truth for numbers shown in Hero
 - `aboutMe` — bio paragraph(s)
 - `experiences` — array of companies → roles → bullet points
-- `services` — 4 "what I bring" cards (icon name + title + description) rendered by `Services.tsx`
+- `services` — 3 "what I bring" cards (icon name + title + description) rendered by `Services.tsx`
 - `skills` — 4 categories: Programming (subgrouped into Front End / Back End / Database / Dev Tools), Virtual Assistant (subgrouped into Marketing / Design / Administrative Support), Administration, AI-Assisted Development. Programming and Virtual Assistant use `subgroups: SkillSubgroup[]` instead of a flat `items` list — rendered as columns inside the same card by `Skills.tsx`
 - `projects` — 27 projects (25 NDA internal systems + 2 public), each with a `category` (`ProjectCategory`) used by the Projects filter grid, and `tags` (real tech stack per project, rendered with `techIcon()` logos)
 - `projectCategories` — the 5 category values used as filter chips: Web Applications, Admin Dashboards, Email Automation, API Integrations, Monitoring Tools
@@ -129,8 +129,8 @@ Sections alternate between `bg-[#0d0d0d]` and `bg-[#111]`.
 2. **Navbar** — dark bg, GH logo pill left, nav links right (incl. Services), Download CV teal button
 3. **Hero** — Vortex animated particle bg + left text (stagger, value prop line) + right circular photo cutout with gradient ring + floating social icon bubbles (Mail/GitHub/LinkedIn)
 4. **About** — profile photo (hover scale) + bio + 6 contact icon links + "At a Glance" condensed two-column snapshot (Academic Qualification / Career Highlights with per-role icons)
-5. **Services** — "What I Bring to Your Team" — 4 value-prop cards (Full-Stack Dev, Team Leadership, Technical/Customer Support, AI-Assisted Development)
-6. **Experience** — HRD Singapore timeline (Team Leader → Full Stack Dev → Tech Support → Customer Service), each role has an icon via `roleIcon()`
+5. **Services** — "What I Bring to Your Team" — 3 value-prop cards (Full-Stack Dev, Technical/Customer Support, AI-Assisted Development)
+6. **Experience** — HRD Singapore timeline (Full Stack Dev → Tech Support → Customer Service), each role has an icon via `roleIcon()`
 7. **Skills** — 4 icon cards (zoom FadeIn): Programming and Virtual Assistant span the full row and show subcategory columns (with brand-logo icons via `techIcon()` on Programming items), Administration and AI-Assisted Development stay flat single-column cards — plus a two-row infinite marquee of all skill tags
 8. **Projects** — filterable grid (All / Web Applications / Admin Dashboards / Email Automation / API Integrations / Monitoring Tools) with "Show more" pagination, real tech-stack tags rendered with brand-logo icons, zoom FadeIn + hover lift
 9. **Education** — Montessori Professional College + 2 seminars/trainings
@@ -243,3 +243,8 @@ npm run preview       # Preview production build
 | 2026-07-26 | Hero: dropped the hardcoded "25+" from `valueProposition` — it clashed visually with the Stats row's `stats.projects` (28+, now including QuickStart Clinic), even though the two numbers measure different things (internal enterprise platforms vs. total portfolio projects) |
 | 2026-07-26 | `stats.years` bumped 18 → 19; updated matching "18+ years" mentions in `aboutMe` and the Technical Support service bullet |
 | 2026-07-26 | Live portfolio domain changed to `gelsey-hafalla.vercel.app`; added `public/sitemap.xml` (single homepage entry) and `public/google4f555bbab7a07f3e.html` (Google Search Console verification) |
+| 2026-10-12 | Removed the Team Leader role/title everywhere: experience entry, `personalInfo.title`, `stats.teamLed` + Hero "Team Led" stat, Hero value prop, "Team Leadership & Delivery" service card (Services grid now 3 columns), and team-lead wording in `valueProposition`, `aboutMe`, Services subtitle and Contact copy |
+| 2026-10-12 | Full Stack Web Developer period changed from `2015 – 2023` to `2020 – Current` (per user) |
+| 2026-10-12 | Years of experience now tally with each role's dates instead of the 19-year company tenure: `stats.years` 19 → 6 (web dev, 2020–current); `aboutMe`, the Technical & Customer Support service card and the Services subtitle state 6+ years web dev, 3 years technical support (2012–2015), 5 years customer service (2007–2012) |
+| 2026-10-12 | `public/assets/resume.pdf` rebuilt (HTML → PDF via headless Chrome, same 540×720pt Google Slides layout, Lato) to match the site: Team Leader role/title removed, Full Stack Web Developer `2020 to Current`, About Me uses the 6+/3/5-year wording. The root `Gelsey Hafalla.pdf` is an older export and was not touched |
+| 2026-10-12 | Hero value props: added "Customer Support". HRD Singapore period changed `July 2007 – Present` → `July 2007 – 2026` and Full Stack Web Developer `2020 – Current` → `2020 – 2026`, on the site and in `resume.pdf` |

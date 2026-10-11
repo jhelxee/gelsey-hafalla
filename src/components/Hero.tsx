@@ -5,9 +5,9 @@ import { personalInfo, aboutMe, valueProposition, stats } from '../data/portfoli
 import { Vortex } from './ui/vortex'
 
 const valueProps = [
-  'Team Leadership',
   'Full Stack Development',
   'Technical Support',
+  'Customer Support',
 ]
 
 function CountUp({ target }: { target: number }) {
@@ -131,11 +131,6 @@ export default function Hero() {
               <div>
                 <div className="text-3xl font-black text-white">{stats.projects}+</div>
                 <div className="text-xs text-gray-500 tracking-widest uppercase mt-1">Projects</div>
-              </div>
-              <div className="w-px h-8 bg-white/10" />
-              <div>
-                <div className="text-3xl font-black text-white">{stats.teamLed}+</div>
-                <div className="text-xs text-gray-500 tracking-widest uppercase mt-1">Team Led</div>
               </div>
             </motion.div>
 

@@ -41,7 +41,7 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl md:text-3xl font-black text-white mb-4">Let's build something reliable together.</h3>
               <p className="text-gray-400 mb-8 max-w-xl leading-relaxed">
-                Whether you need a full-stack developer, a team lead who ships on schedule, or dependable technical support — I'm open to new opportunities. Reach out through any channel below, or grab my resume.
+                Whether you need a full-stack developer or dependable technical support — I'm open to new opportunities. Reach out through any channel below, or grab my resume.
               </p>
               <a
                 href={personalInfo.resume}

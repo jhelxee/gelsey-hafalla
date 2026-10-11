@@ -1,10 +1,10 @@
-import { Code2, Users, Headset, Sparkles } from 'lucide-react'
+import { Code2, Headset, Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { services } from '../data/portfolio'
 import FadeIn from './FadeIn'
 import RevealText from './RevealText'
 
-const iconMap: Record<string, React.ElementType> = { Code2, Users, Headset, Sparkles }
+const iconMap: Record<string, React.ElementType> = { Code2, Headset, Sparkles }
 
 export default function Services() {
   return (
@@ -16,11 +16,11 @@ export default function Services() {
         <RevealText className="text-3xl md:text-4xl font-black text-white mb-4">What I Bring to Your Team</RevealText>
         <FadeIn>
           <p className="text-gray-400 mb-16 max-w-2xl">
-            Nearly two decades of shipping software and leading people — not just one or the other.
+            6+ years of shipping software, built on 8 years of supporting the people who use it.
           </p>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon] ?? Code2
             return (
