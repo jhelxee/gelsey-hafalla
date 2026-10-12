@@ -110,12 +110,12 @@ export const skills: SkillGroup[] = [
         label: 'Front End',
         items: [
           'JavaScript', 'TypeScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap',
-          'Tailwind CSS', 'Vue.js', 'Vuetify', 'React', 'Next.js', 'Radix UI', 'React Hook Form',
+          'Tailwind CSS', 'Vue.js', 'Vuetify', 'Vuex', 'React', 'Next.js', 'Radix UI', 'React Hook Form',
         ],
       },
       {
         label: 'Back End',
-        items: ['Node.js', 'Express.js', 'PHP', 'Socket.io', 'Python', 'Zod'],
+        items: ['Node.js', 'Express.js', 'PHP', 'Socket.io', 'Python', 'Zod', 'Prisma', 'ExcelJS'],
       },
       {
         label: 'Database',
@@ -123,7 +123,7 @@ export const skills: SkillGroup[] = [
       },
       {
         label: 'Dev Tools',
-        items: ['GitHub', 'GitLab', 'NPM', 'Yarn', 'REST API', 'Nulab (Backlog)'],
+        items: ['GitHub', 'GitLab', 'NPM', 'Yarn', 'Vite', 'Vue CLI', 'REST API', 'Nulab (Backlog)'],
       },
     ],
   },
