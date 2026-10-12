@@ -26,6 +26,7 @@ import {
   SiRadixui,
   SiReacthookform,
   SiZod,
+  SiPrisma,
 } from 'react-icons/si'
 
 const techIconMap: Record<string, IconType> = {
@@ -55,6 +56,7 @@ const techIconMap: Record<string, IconType> = {
   'Radix UI': SiRadixui,
   'React Hook Form': SiReacthookform,
   Zod: SiZod,
+  Prisma: SiPrisma,
 }
 
 export function techIcon(name: string): IconType | undefined {

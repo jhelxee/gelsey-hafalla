@@ -16,7 +16,7 @@ export const valueProposition =
 
 export const stats = {
   years: 6,
-  projects: 28,
+  projects: 30,
   systems: 25,
 }
 
@@ -215,6 +215,20 @@ export const projects: Project[] = [
       'Developed a responsive bakery/cafe website with online ordering, crafted to showcase baked products, balloon designing, and catering services while delivering a smooth and user-friendly customer experience.',
     image: '/assets/projects/twistAndTreats.png',
     link: 'https://twist-and-treats.vercel.app/',
+  },
+  {
+    title: 'Scan Check',
+    category: 'Monitoring Tools',
+    tags: ['Vue.js', 'Vuetify', 'TypeScript', 'Vite', 'Node.js', 'Express.js', 'Prisma', 'MySQL'],
+    description:
+      "Built a web system that compares the location, quantity and alignment of lighting fixtures on scanned Japanese lighting plans against the project's electrical floor plan and construction detail sheets, flagging mismatches automatically so reviewers only check what doesn't match.",
+  },
+  {
+    title: 'Plan Info',
+    category: 'API Integrations',
+    tags: ['Vue.js', 'Vuetify', 'Vuex', 'Vue CLI', 'Node.js', 'Express.js', 'MySQL', 'ExcelJS'],
+    description:
+      'Built a web-based system that lets the Unit Wiring department look up the status of a plan in PCMS and in the main database, compare the two, correct any mismatch with a preview and a record of every change, and extract plan data to Excel.',
   },
   {
     title: 'Centralized System',

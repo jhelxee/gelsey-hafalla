@@ -89,7 +89,7 @@ To update any text, social links, skills, projects — edit that file only.
 - `experiences` — array of companies → roles → bullet points
 - `services` — 3 "what I bring" cards (icon name + title + description) rendered by `Services.tsx`
 - `skills` — 4 categories: Programming (subgrouped into Front End / Back End / Database / Dev Tools), Virtual Assistant (subgrouped into Marketing / Design / Administrative Support), Administration, AI-Assisted Development. Programming and Virtual Assistant use `subgroups: SkillSubgroup[]` instead of a flat `items` list — rendered as columns inside the same card by `Skills.tsx`
-- `projects` — 27 projects (25 NDA internal systems + 2 public), each with a `category` (`ProjectCategory`) used by the Projects filter grid, and `tags` (real tech stack per project, rendered with `techIcon()` logos)
+- `projects` — 30 projects (27 NDA internal systems + 3 public), each with a `category` (`ProjectCategory`) used by the Projects filter grid, and `tags` (real tech stack per project, rendered with `techIcon()` logos)
 - `projectCategories` — the 5 category values used as filter chips: Web Applications, Admin Dashboards, Email Automation, API Integrations, Monitoring Tools
 - `education` — school + degree
 - `trainings` — seminars/training institutions
@@ -248,3 +248,5 @@ npm run preview       # Preview production build
 | 2026-10-12 | Years of experience now tally with each role's dates instead of the 19-year company tenure: `stats.years` 19 → 6 (web dev, 2020–current); `aboutMe`, the Technical & Customer Support service card and the Services subtitle state 6+ years web dev, 3 years technical support (2012–2015), 5 years customer service (2007–2012) |
 | 2026-10-12 | `public/assets/resume.pdf` rebuilt (HTML → PDF via headless Chrome, same 540×720pt Google Slides layout, Lato) to match the site: Team Leader role/title removed, Full Stack Web Developer `2020 to Current`, About Me uses the 6+/3/5-year wording. The root `Gelsey Hafalla.pdf` is an older export and was not touched |
 | 2026-10-12 | Hero value props: added "Customer Support". HRD Singapore period changed `July 2007 – Present` → `July 2007 – 2026` and Full Stack Web Developer `2020 – Current` → `2020 – 2026`, on the site and in `resume.pdf` |
+| 2026-10-12 | Added "Scan Check" project (private, Monitoring Tools; Vue 3 + Vuetify + TypeScript + Vite / Node.js + Express 5 + Prisma + MySQL) as the first private project after the three public ones; `stats.projects` bumped to 29; added a `Prisma` entry to `techIcon()` |
+| 2026-10-12 | Added "Plan Info" project (private, API Integrations; Vue 2 + Vuetify + Vuex + Vue CLI / Node.js + Express 5 + MySQL, ExcelJS export, PCMS / PlanInfoApi / OptionPicking APIs) right after Scan Check; `stats.projects` bumped to 30. The internal API names are not shown as tags |
